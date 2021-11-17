@@ -4,6 +4,8 @@ import csv
 import pandas
 import numpy
 import pandas as pd
+from Elevator import Elevator
+from CallForElevator import CallForElevator
 
 
 def AllocateElevator(building, calls, out):
@@ -12,7 +14,21 @@ def AllocateElevator(building, calls, out):
         pass
 
     df = calls
+    elevators = []
+    all_calls = []
     if numberofelevators > 1:
+        for i in range(numberofelevators):
+            current_elev = building["_elevators"][i]
+            e = Elevator(i, current_elev["_speed"], current_elev["_closeTime"], current_elev["openTime"],
+                         current_elev["_startTime"], current_elev["_stopTime"], 0)
+            elevators.append(e)
+
+        for i in calls.iterrows():
+            c = CallForElevator(i[1], i[2], i[3])
+            all_calls.append(c)
+
+
+
 
 
     else:
