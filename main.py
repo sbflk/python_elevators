@@ -6,14 +6,19 @@ import numpy
 import pandas as pd
 
 
-def AllocateElevator(building, calls, df,out):
+def AllocateElevator(building, calls, out):
     numberofelevators = len(building["_elevators"])
-    if numberofelevators > 1:
+    with open(out, 'w') as f:
         pass
+
+    df = calls
+    if numberofelevators > 1:
+
+
     else:
         #return cvs file with zeros at column 6
         df[5] = 0
-        df.to_csv(out, header=False)
+        df.to_csv(out, header=False, index=False)
 
 
 
@@ -33,9 +38,7 @@ if __name__ == '__main__':
     f = open(json_file, "r")
     building = json.load(f)
 
-    f1 = open(calls, "r")
-    calls = f1.read()
+    df_calls = pd.read_csv(calls, header=None)
 
-    df = pd.read_csv(out, header=None)
 
-    AllocateElevator(building, calls, df, out)
+    AllocateElevator(building, df_calls, out)
