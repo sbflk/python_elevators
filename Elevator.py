@@ -1,5 +1,5 @@
 class Elevator:
-    def __init__(self, _id, _speed, _closetime, _opentime, _starttime, _stoptime,_state):
+    def __init__(self, _id, _speed, _closetime, _opentime, _starttime, _stoptime,_state, _current_call):
         self._id = _id
         self._speed = _speed
         self._closetime = _closetime
@@ -7,6 +7,7 @@ class Elevator:
         self._starttime = _starttime
         self._stoptime = _stoptime
         self.state = _state
+        self.current_call = _current_call
 
 
     def get_id(self):
@@ -29,6 +30,12 @@ class Elevator:
 
     def get_state(self):
         return self.state
+
+    def get_current_call(self):
+        return self.current_call
+
+    def set_current_call(self, c):
+        self.current_call = c
 
     def get_pos(self):
         pass

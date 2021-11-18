@@ -20,13 +20,19 @@ def AllocateElevator(building, calls, out):
         for i in range(numberofelevators):
             current_elev = building["_elevators"][i]
             e = Elevator(i, current_elev["_speed"], current_elev["_closeTime"], current_elev["openTime"],
-                         current_elev["_startTime"], current_elev["_stopTime"], 0)
+                         current_elev["_startTime"], current_elev["_stopTime"], 0, None)
             elevators.append(e)
 
         for i in calls.iterrows():
             c = CallForElevator(i[1], i[2], i[3])
             all_calls.append(c)
 
+        for i in range(numberofelevators):# give each elevator one call to start with
+            df[5] = elevators[i]
+            elevators[i].set_current_call(all_calls[i])
+
+        for i in range(numberofelevators, len(all_calls)):
+            current_call = all_calls[i]
 
 
 
