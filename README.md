@@ -31,6 +31,9 @@ If more than one elevator has the lowest time(very unlikely), the elevator with 
 Class diagram:
 
 
+![uml_diagram](https://user-images.githubusercontent.com/76430228/142435000-991d0010-49eb-4375-bf70-ccf6530ff3cc.png)
+
+
 Report Table:
 This is the report table of the calls in each building.
 
@@ -39,6 +42,8 @@ In each square there are two rows.
 The first row is the average time.
 
 The second is the amount of uncompleted calls. 
+
+<img width="465" alt="table of reports" src="https://user-images.githubusercontent.com/76430228/142435321-1f620100-4806-4050-bcf1-7c5f2917efe9.PNG">
 
 
 
