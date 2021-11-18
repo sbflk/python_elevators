@@ -6,6 +6,7 @@ import numpy
 import pandas as pd
 from Elevator import Elevator
 from CallForElevator import CallForElevator
+import operator
 
 
 def AllocateElevator(building, calls, out):
