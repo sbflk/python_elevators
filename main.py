@@ -36,17 +36,16 @@ def AllocateElevator(building, calls, out):
             current_call = all_calls[j]
             for i in range(numberofelevators):
                 e = elevators[i]
-                time_from_last_call = e.get_current_call().get_time() + e.get_closetime() + e.get_starttime() + \
-                                      e.get_stoptime() + e.get_opentime() + \
-                                      (abs(e.get_current_call().get_dest()-current_call.get_src()))/e.get_speed()
-                if time_from_last_call-current_call.get_time() <= 0:
-                    when_will_finish.append(0)
-                else:
-                    when_will_finish.append(time_from_last_call-current_call.get_time())
+                time_from_last_call = e.get_current_call().get_time() + 3*e.get_closetime() + 3*e.get_starttime() + \
+                                      3*e.get_stoptime() + 3*e.get_opentime() + \
+                                      (abs(e.get_current_call().get_dest()-current_call.get_src()))/e.get_speed() + \
+                                      (abs(e.get_current_call().get_dest()-e.get_current_call().get_src()))/e.get_speed() + \
+                                      (abs(current_call.get_src()-current_call.get_dest()))/e.get_speed()
 
+                when_will_finish.append(time_from_last_call)
 
             min_t = all_calls[-1].get_time() + 120 #max time
-            fastest_times = []# list because more than 1 elevator could have time 0 which means she has no calls
+            fastest_times = []  # list because more than 1 elevator could have time 0 which means she has no calls
             for i in range(len(when_will_finish)):
                 if when_will_finish[i] < min_t:
                     min_t = when_will_finish[i]
