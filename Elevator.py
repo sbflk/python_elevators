@@ -6,8 +6,8 @@ class Elevator:
         self._opentime = _opentime
         self._starttime = _starttime
         self._stoptime = _stoptime
-        self.state = _state
-        self.current_call = _current_call
+        self._state = _state
+        self._current_call = _current_call
 
 
     def get_id(self):
@@ -29,13 +29,13 @@ class Elevator:
         return self._stoptime
 
     def get_state(self):
-        return self.state
+        return self._state
 
     def get_current_call(self):
-        return self.current_call
+        return self._current_call
 
     def set_current_call(self, c):
-        self.current_call = c
+        self._current_call = c
 
     def get_pos(self):
         pass
