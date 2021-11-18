@@ -56,6 +56,7 @@ def AllocateElevator(building, calls, out):
 
             if len(fastest_times) == 1:
                 df.at[j, 5] = fastest_times[0]
+                elevators[fastest_times[0]].set_current_call(all_calls[j])
             else:
                 fastest = fastest_times[0]
                 for i in fastest_times:
@@ -63,6 +64,7 @@ def AllocateElevator(building, calls, out):
                         fastest = i
 
                 df.at[j, 5] = fastest
+                elevators[fastest].set_current_call(all_calls[fastest])
 
         df.to_csv(out, header=False, index=False)
 
