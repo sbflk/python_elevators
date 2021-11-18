@@ -13,7 +13,3 @@ class CallForElevator:
     def get_dest(self):
         return self._dest
 
-    def get_type(self):# 1-up, 0-down
-        if self._dest-self._src > 0:
-            return 1
-        return 0
