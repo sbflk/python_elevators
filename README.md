@@ -31,7 +31,7 @@ If more than one elevator has the lowest time(very unlikely), the elevator with 
 Class diagram:
 
 
-![uml_diagram](https://user-images.githubusercontent.com/76430228/142435000-991d0010-49eb-4375-bf70-ccf6530ff3cc.png)
+![uml_diagram1](https://user-images.githubusercontent.com/76430228/142437880-287d4f60-d926-4290-8972-d07795dd75bb.png)
 
 
 Report Table:
